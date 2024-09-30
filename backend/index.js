@@ -10,7 +10,7 @@ dotenv.config();
 
 // Create an Express application
 const app = express();
-const PORT = 3000;
+const PORT = "https://new-weather-ashen.vercel.app/";
 
 // Get API key and URL from environment variables
 const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
