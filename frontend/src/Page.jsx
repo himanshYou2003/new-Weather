@@ -7,6 +7,7 @@ import Clock from "./Clock"; // Import the Clock component
 
 
 function Page() {
+  let url ="https://new-weather-ds2b.vercel.app/"
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]); // Default coordinates (London)
@@ -22,7 +23,7 @@ function Page() {
   // Fetch weather by city
   const fetchWeather = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/weather", {
+      const response = await axios.get(url+"api/weather", {
         params: { city },
       });
       setWeather(response.data);
@@ -40,7 +41,7 @@ function Page() {
   // Fetch weather by location
   const fetchWeatherByLocation = async (lat, lon) => {
     try {
-      const response = await axios.get("http://localhost:3000/api/weather", {
+      const response = await axios.get(url+"api/weather", {
         params: { lat, lon },
       });
       setWeather(response.data);
